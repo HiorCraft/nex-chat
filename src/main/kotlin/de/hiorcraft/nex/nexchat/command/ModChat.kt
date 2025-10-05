@@ -20,7 +20,7 @@ class ModChat(private val plugin: JavaPlugin) {
                 val player = player as Player
                 val message = args[0] as String
 
-                // Nachricht an alle Mods senden
+                /
                 plugin.server.onlinePlayers
                     .filter { it.hasPermission("teamchat.use") }
                     .forEach { mod ->

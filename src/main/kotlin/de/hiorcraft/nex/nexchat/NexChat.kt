@@ -15,7 +15,7 @@ class NexChat : JavaPlugin(), Listener {
     override fun onEnable() {
         logger.info("ModChat Plugin ist starting.....")
 
-        // Events registrieren
+
         server.pluginManager.registerEvents(this, this)
 
         // Befehle registrieren
