@@ -2,3 +2,4 @@ name: nexchat
 version: '1.0'
 main: de.hiorcraft.nex.nexchat.NexChat
 api-version: '1.21'
+depend: [CommandAPI]

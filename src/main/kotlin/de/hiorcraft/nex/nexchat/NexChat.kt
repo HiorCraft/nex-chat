@@ -1,5 +1,7 @@
 package de.hiorcraft.nex.nexchat
 
+import de.hiorcraft.nex.nexchat.command.ModChat
+import dev.jorel.commandapi.CommandAPI
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.event.EventHandler
@@ -11,8 +13,18 @@ import org.bukkit.plugin.java.JavaPlugin
 class NexChat : JavaPlugin(), Listener {
 
     override fun onEnable() {
+        logger.info("ModChat Plugin ist starting.....")
+
+        // Events registrieren
         server.pluginManager.registerEvents(this, this)
-        logger.info("JoinLeaveMessage Plugin aktiviert!")
+
+        // Befehle registrieren
+        ModChat(this).register()
+        logger.info("ModChat Plugin ist started")
+    }
+
+    override fun onDisable() {
+        CommandAPI.onDisable()
     }
 
     @EventHandler
