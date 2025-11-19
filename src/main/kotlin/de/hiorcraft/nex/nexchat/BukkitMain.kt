@@ -24,6 +24,9 @@ class BukkitMain : SuspendingJavaPlugin() {
     }
 
     override fun onDisable() {
+        logger.info("ModChat Plugin ist disabled")
         CommandAPI.onDisable()
+
+        logger.info("Bye <3")
     }
 }
