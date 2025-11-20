@@ -12,18 +12,27 @@ import org.bukkit.event.player.PlayerQuitEvent
 class ConnectListener : Listener {
 
     @EventHandler
-    fun onPlayerJoin(event: PlayerJoinEvent) {
+    fun onPlayerQuit(event: PlayerJoinEvent) {
         event.joinMessage(null)
-        val msg = Component.text("[+]", NamedTextColor.GREEN)
-            .append(Component.text(" ${event.player.name}", NamedTextColor.GRAY))
+
+        val msg = Component.text("[", NamedTextColor.GRAY)
+            .append(Component.text("+", NamedTextColor.GREEN))
+            .append(Component.text("]", NamedTextColor.GRAY))
+            .append(Component.text(" ${event.player.name}", NamedTextColor.DARK_GRAY))
+
         server.sendMessage(msg)
     }
+
 
     @EventHandler
     fun onPlayerQuit(event: PlayerQuitEvent) {
         event.quitMessage(null)
-        val msg = Component.text("[-]", NamedTextColor.RED)
-            .append(Component.text(" ${event.player.name}", NamedTextColor.GRAY))
+
+        val msg = Component.text("[", NamedTextColor.GRAY)
+            .append(Component.text("-", NamedTextColor.RED))
+            .append(Component.text("]", NamedTextColor.GRAY))
+            .append(Component.text(" ${event.player.name}", NamedTextColor.DARK_GRAY))
+
         server.sendMessage(msg)
     }
 }
