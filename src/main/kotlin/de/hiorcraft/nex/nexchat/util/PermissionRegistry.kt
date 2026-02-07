@@ -1,4 +1,4 @@
-package de.hiorcraft.nex.nexchat.permissions
+package de.hiorcraft.nex.nexchat.util
 
 object PermissionRegistry {
 

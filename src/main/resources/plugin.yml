@@ -1,5 +1,0 @@
-name: nexchat
-version: '1.0'
-main: de.hiorcraft.nex.nexchat.BucketMain
-api-version: '1.21'
-depend: [CommandAPI]

@@ -1,6 +1,6 @@
 package de.hiorcraft.nex.nexchat.command
 
-import de.hiorcraft.nex.nexchat.permissions.PermissionRegistry
+import de.hiorcraft.nex.nexchat.util.PermissionRegistry
 import de.hiorcraft.nex.nexchat.plugin
 import dev.jorel.commandapi.arguments.GreedyStringArgument
 import dev.jorel.commandapi.kotlindsl.commandAPICommand
