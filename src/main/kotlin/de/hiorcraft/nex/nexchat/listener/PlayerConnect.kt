@@ -1,6 +1,6 @@
 package de.hiorcraft.nex.nexchat.listener
 
-import de.hiorcraft.nex.nexchat.plugin
+
 import dev.slne.surf.surfapi.bukkit.api.extensions.server
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -9,20 +9,20 @@ import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
 
-class ConnectListener : Listener {
+class PlayerConnect : Listener {
 
     @EventHandler
+
     fun onPlayerQuit(event: PlayerJoinEvent) {
         event.joinMessage(null)
 
         val msg = Component.text("[", NamedTextColor.GRAY)
             .append(Component.text("+", NamedTextColor.GREEN))
             .append(Component.text("]", NamedTextColor.GRAY))
-            .append(Component.text(" ${event.player.name}", NamedTextColor.DARK_GRAY))
+            .append(Component.text(" ${event.player.name}", NamedTextColor.GRAY))
 
         server.sendMessage(msg)
     }
-
 
     @EventHandler
     fun onPlayerQuit(event: PlayerQuitEvent) {
@@ -31,7 +31,7 @@ class ConnectListener : Listener {
         val msg = Component.text("[", NamedTextColor.GRAY)
             .append(Component.text("-", NamedTextColor.RED))
             .append(Component.text("]", NamedTextColor.GRAY))
-            .append(Component.text(" ${event.player.name}", NamedTextColor.DARK_GRAY))
+            .append(Component.text(" ${event.player.name}", NamedTextColor.GRAY))
 
         server.sendMessage(msg)
     }

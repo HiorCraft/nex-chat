@@ -1,5 +1,7 @@
 package de.hiorcraft.nex.nexchat.listener
 
+
+import de.hiorcraft.nex.nexchat.util.PlayerDeathConfig
 import dev.slne.surf.surfapi.bukkit.api.extensions.server
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -12,14 +14,21 @@ class PlayerDeath : Listener {
     @EventHandler
     fun onPlayerDeath(event: PlayerDeathEvent) {
         val player = event.entity
-        event.deathMessage(null)
 
-        val msg = Component.text("[", NamedTextColor.GRAY)
-            .append(Component.text("☠", NamedTextColor.DARK_RED))
-            .append(Component.text("]", NamedTextColor.GRAY))
-            .append(Component.text(" ${player.name} ", NamedTextColor.DARK_GRAY))
-            .append(Component.text("ist gestorben.", NamedTextColor.DARK_GRAY))
+        if (!PlayerDeathConfig.isOn) return
 
-        server.sendMessage(msg)
+        if (PlayerDeathConfig.isNex) {
+            event.deathMessage(null)
+
+            val msg = Component.text("[", NamedTextColor.GRAY)
+                .append(Component.text("☠", NamedTextColor.DARK_RED))
+                .append(Component.text("]", NamedTextColor.GRAY))
+                .append(Component.text(" ${player.name} ", NamedTextColor.DARK_GRAY))
+                .append(Component.text("ist gestorben.", NamedTextColor.DARK_GRAY))
+
+            server.sendMessage(msg)
+        }else (
+            event.deathMessage()
+        )
     }
 }
