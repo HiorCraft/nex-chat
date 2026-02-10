@@ -1,8 +1,10 @@
 package de.hiorcraft.nex.nexchat
 
 import com.github.shynixn.mccoroutine.folia.SuspendingJavaPlugin
+import de.hiorcraft.nex.nexchat.command.playerAdvancementCommand
 import de.hiorcraft.nex.nexchat.command.playerDeathCommand
 import de.hiorcraft.nex.nexchat.command.teamchatCommand
+import de.hiorcraft.nex.nexchat.listener.PlayerAdvancement
 import de.hiorcraft.nex.nexchat.listener.PlayerConnect
 import de.hiorcraft.nex.nexchat.listener.PlayerDeath
 import org.bukkit.plugin.java.JavaPlugin
@@ -18,10 +20,12 @@ class BukkitMain : SuspendingJavaPlugin() {
 
         manager.registerEvents(PlayerConnect(), this)
         manager.registerEvents(PlayerDeath(),this)
+        manager.registerEvents(PlayerAdvancement(),this)
         logger.info("Enabled Listeners.")
 
         teamchatCommand()
         playerDeathCommand()
+        playerAdvancementCommand()
         logger.info("Commands Listeners.")
     }
 

@@ -16,19 +16,15 @@ class PlayerDeath : Listener {
         val player = event.entity
 
         if (!PlayerDeathConfig.isOn) return
-
-        if (PlayerDeathConfig.isNex) {
             event.deathMessage(null)
 
             val msg = Component.text("[", NamedTextColor.GRAY)
                 .append(Component.text("☠", NamedTextColor.DARK_RED))
                 .append(Component.text("]", NamedTextColor.GRAY))
-                .append(Component.text(" ${player.name} ", NamedTextColor.DARK_GRAY))
-                .append(Component.text("ist gestorben.", NamedTextColor.DARK_GRAY))
+                .append(Component.text(" ${player.name} ", NamedTextColor.GRAY))
+                .append(Component.text("ist gestorben.", NamedTextColor.GRAY))
 
             server.sendMessage(msg)
-        }else (
-            event.deathMessage()
-        )
+
     }
 }
