@@ -1,14 +1,9 @@
 package de.hiorcraft.nex.nexchat.listener
 
 
-import com.github.shynixn.mccoroutine.folia.launch
 import de.hiorcraft.nex.nexchat.deathmessages.DeathMessageProvider
-import de.hiorcraft.nex.nexchat.plugin
-import dev.slne.surf.surfapi.bukkit.api.extensions.server
 import dev.slne.surf.surfapi.core.api.messages.Colors
 import dev.slne.surf.surfapi.core.api.messages.adventure.buildText
-import dev.slne.surf.surfapi.core.api.messages.adventure.sendText
-import dev.slne.surf.surfapi.core.api.util.mapAsync
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.event.HoverEvent
 import org.bukkit.entity.LivingEntity
@@ -46,14 +41,6 @@ object PlayerDeathListener : Listener {
                 }
             })
 
-        plugin.launch {
-            server.onlinePlayers.mapAsync { player ->
-
-                player.sendText {
-                    append(message)
-                }
-            }
-        }
         event.showDeathMessages = false
     }
 }

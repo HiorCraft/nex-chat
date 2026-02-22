@@ -311,21 +311,18 @@ object DeathMessageProvider {
     )
 
     private val DEFAULT_MESSAGE = buildText {
-        spacer(PLAYER_PLACEHOLDER)
-        spacer(" ist gestorben")
+        appendDeathPrefix()
+        variableValue(PLAYER_PLACEHOLDER)
+        spacer(" ist gestorben.")
     }
 
     private fun getMessage(cause: DamageCause?, killer: Entity?): Component {
-        if (killer != null) {
-            for (clazz in entityMessages.keys) {
-                if (clazz.isInstance(killer)) {
-                    val templates = entityMessages[clazz]
-                    if (templates != null && templates.isNotEmpty()) return templates.random()
-                }
+        val entityMessage = killer
+            ?.let { kr ->
+                entityMessages.entries
+                    .firstNotNullOfOrNull { (clazz, templates) -> if (clazz.isInstance(kr)) templates.random() else null }
             }
-        }
-
-        return genericMessages[cause]?.random() ?: DEFAULT_MESSAGE
+        return entityMessage ?: genericMessages[cause]?.random() ?: DEFAULT_MESSAGE
     }
 
     fun getDeathMessageComponent(
