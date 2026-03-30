@@ -22,7 +22,7 @@ import org.bukkit.entity.Player
                     .filter { it.hasPermission("teamchat.use") }
                     .forEach { mod ->
                         mod.sendMessage(
-                            Component.text("(TEAM) ${player.name}: $message", NamedTextColor.DARK_AQUA)
+                            Component.text("[TEAM] ${player.name}: $message", NamedTextColor.DARK_AQUA)
                             )
                     }
             }
