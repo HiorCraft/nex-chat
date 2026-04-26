@@ -1,4 +1,4 @@
-package de.hiorcraft.nex.nexchat.deathmessages
+package de.hiorcraft.nex.chat.deathmessages
 
 import dev.slne.surf.surfapi.core.api.messages.Colors
 import dev.slne.surf.surfapi.core.api.messages.adventure.buildText

@@ -1,9 +1,9 @@
-package de.hiorcraft.nex.nexchat.listener
+package de.hiorcraft.nex.chat.listener
 
 import com.github.benmanes.caffeine.cache.Caffeine
 import com.github.shynixn.mccoroutine.folia.launch
-import de.hiorcraft.nex.nexchat.deathmessages.DeathMessageProvider
-import de.hiorcraft.nex.nexchat.plugin
+import de.hiorcraft.nex.chat.plugin
+import de.hiorcraft.nex.chat.deathmessages.DeathMessageProvider
 import dev.slne.surf.surfapi.bukkit.api.event.cancel
 import dev.slne.surf.surfapi.bukkit.api.extensions.server
 import dev.slne.surf.surfapi.core.api.messages.Colors

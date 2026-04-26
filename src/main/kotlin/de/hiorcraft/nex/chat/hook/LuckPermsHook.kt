@@ -1,4 +1,4 @@
-package de.hiorcraft.nex.nexchat.hook
+package de.hiorcraft.nex.chat.hook
 
 import net.luckperms.api.LuckPermsProvider
 import org.bukkit.entity.Player

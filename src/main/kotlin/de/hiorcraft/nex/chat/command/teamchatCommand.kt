@@ -1,7 +1,7 @@
-package de.hiorcraft.nex.nexchat.command
+package de.hiorcraft.nex.chat.command
 
-import de.hiorcraft.nex.nexchat.util.PermissionRegistry
-import de.hiorcraft.nex.nexchat.plugin
+import de.hiorcraft.nex.chat.util.PermissionRegistry
+import de.hiorcraft.nex.chat.plugin
 import dev.jorel.commandapi.arguments.GreedyStringArgument
 import dev.jorel.commandapi.kotlindsl.commandAPICommand
 import dev.jorel.commandapi.kotlindsl.playerExecutor

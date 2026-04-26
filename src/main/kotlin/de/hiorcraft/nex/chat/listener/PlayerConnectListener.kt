@@ -1,7 +1,7 @@
-package de.hiorcraft.nex.nexchat.listener
+package de.hiorcraft.nex.chat.listener
 
 
-import de.hiorcraft.nex.nexchat.hook.LuckPermsHook
+import de.hiorcraft.nex.chat.hook.LuckPermsHook
 import dev.slne.surf.surfapi.bukkit.api.extensions.server
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
